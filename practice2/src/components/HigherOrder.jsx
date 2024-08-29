@@ -1,13 +1,26 @@
-const HigherOrder = (Component) => {
-  const Authenticated = false;
+import { useState } from "react";
 
+const HigherOrder = (Component) => {
   const AuthComponent = (props) => {
-    if (Authenticated) {
-      return <Component {...props} />;
+    const [isAuthenticated, setAuthenticated] = useState(false);
+
+    if (isAuthenticated) {
+      return (
+        <>
+          <Component {...props} />
+          <button onClick={() => setAuthenticated(false)}>Log out</button>
+        </>
+      );
     } else {
-      return <h1>Please Login</h1>;
+      return (
+        <>
+          <p>Please Login</p>
+          <button onClick={() => setAuthenticated(true)}>Login</button>
+        </>
+      );
     }
   };
+
   return AuthComponent;
 };
 

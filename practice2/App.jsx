@@ -4,10 +4,10 @@ import HigherOrder from "./src/components/HigherOrder";
 
 
 function App() {
-  const Auth = HigherOrder(Button)
+  const Auth = HigherOrder(Button);
   return (
     <>
-      <Auth/>
+      <Auth />
     </>
   );
 }
