@@ -1,12 +1,10 @@
-import { HandleClick } from "../actions/useraction";
 
 const Button = () => {
-  const text = "Add a Post";
   return (
     <div>
-      <HandleClick text={text} />
+      <p>You Are Login</p>
     </div>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
